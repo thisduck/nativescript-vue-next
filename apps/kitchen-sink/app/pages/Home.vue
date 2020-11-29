@@ -5,8 +5,9 @@
     </ActionBar>
 
     <StackLayout>
-      <Button class="-outline" text="Counter App" @tap="$navigateTo(Counter)" />
-      <Button class="-outline" text="Composition Counter App" @tap="$navigateTo(CompositionCounter)" />
+      <Button class="-outline" text="Counter" @tap="$navigateTo(Counter)" />
+      <Button class="-outline" text="Composition Counter" @tap="$navigateTo(CompositionCounter)" />
+      <Button class="-outline" text="BottomNavigation" @tap="$navigateTo(BottomNavigation)" />
     </StackLayout>
   </Page>
 </template>
@@ -14,17 +15,15 @@
 <script>
 import Counter from './Counter'
 import CompositionCounter from './CompositionCounter'
+import BottomNavigation from './BottomNavigation'
 
 export default {
   data() {
     return {
       Counter,
-      CompositionCounter
+      CompositionCounter,
+      BottomNavigation,
     }
   },
 }
 </script>
-
-<style scoped lang="scss">
-@import '~@nativescript/theme/scss/variables/blue';
-</style>
