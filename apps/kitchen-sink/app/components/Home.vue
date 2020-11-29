@@ -1,29 +1,27 @@
 <template>
-    <Page>
-        <ActionBar>
-            <Label text="Home"/>
-        </ActionBar>
+  <Page>
+    <ActionBar>
+      <Label text="Home" />
+    </ActionBar>
 
-        <GridLayout>
-            <Label class="info" :text="message" />
-        </GridLayout>
-    </Page>
+    <StackLayout>
+      <Button class="-outline" text="Counter App" @tap="$navigateTo(Counter)" />
+    </StackLayout>
+  </Page>
 </template>
 
 <script>
-  export default {
-    computed: {
-      message() {
-        return "Blank {N}-Vue app";
-      }
+import Counter from './Counter'
+
+export default {
+  data() {
+    return {
+      Counter,
     }
-  };
+  },
+}
 </script>
 
-<style scoped>
-    .info {
-        font-size: 20;
-        horizontal-align: center;
-        vertical-align: center;
-    }
+<style scoped lang="scss">
+@import '~@nativescript/theme/scss/variables/blue';
 </style>

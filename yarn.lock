@@ -1409,6 +1409,11 @@
   resolved "https://registry.yarnpkg.com/@nativescript/ios/-/ios-7.0.6.tgz#c5748e6edcf41b197b94aa423e68aff5fce95581"
   integrity sha512-Y5dFDeT8RWn4QGclTBcp+GFtEpHtEfCEazSJ0y5tvUDbjPisSbwuoiIkjppL+bv1D4Dyi6datNS8kPgRTD+ILg==
 
+"@nativescript/theme@~2.3.0":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@nativescript/theme/-/theme-2.3.3.tgz#2584d03687831a2c13b9136af5c9456c37df8a9c"
+  integrity sha512-fWn9qTCWJSaN3REX23Fb4N5X2IGNh+RbvzS3b3/ib0KeXrrhovOzBBxoP9db7kgJ5/FUtyBqbvB4xzxE+1z2nQ==
+
 "@nativescript/webpack@3.0.8", "@nativescript/webpack@^3.0.8":
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/@nativescript/webpack/-/webpack-3.0.8.tgz#b37a2c0b033ec85315ff567e6160eb1d6167fb49"

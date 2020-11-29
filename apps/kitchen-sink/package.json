@@ -21,6 +21,7 @@
   "homepage": "https://github.com/nativescript-vue/nativescript-vue/tree/dev/packages/kitchen-sink#readme",
   "dependencies": {
     "@nativescript/core": "^7.0.13",
+    "@nativescript/theme": "~2.3.0",
     "nativescript-vue": "3.0.0-dev.4"
   },
   "devDependencies": {
