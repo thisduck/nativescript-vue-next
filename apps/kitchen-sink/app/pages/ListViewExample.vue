@@ -1,26 +1,26 @@
 <template>
   <Page>
     <ListView :items="items2" @itemTap="onItemTap">
-      <template v-slot:default="{ item, index, even, odd }">
-        <GridLayout columns="*, auto">
-          <Label textWrap="true"> {{ index }} - {{ item }} </Label>
+      <v-template v-slot="{ item, index, $even, $odd }">
+        <GridLayout columns="*, auto ">
+          <Label textWrap="true"> {{ item.number }} - {{ item.text }} </Label>
           <Button
             col="1"
             :text="'tap ' + index"
-            @tap="onTestTap(item, index, even, odd)"
+            @tap="onTestTap(item.text, index, $even, $odd)"
           />
         </GridLayout>
-      </template>
-      <template v-slot:other="{item}">
-       <Label >{{ item }}Other</Label>
-      </template>
+      </v-template>
+      <v-template name="other" v-slot="{ item, index }" if="$odd">
+        <Label>Odd - {{ index }} - {{ item.number }}</Label>
+      </v-template>
     </ListView>
   </Page>
 </template>
 
 <script>
 import { defineComponent } from 'nativescript-vue'
-import { ListView } from 'nativescript-vue'
+import { ListView, ListItemTemplate } from 'nativescript-vue'
 
 const randomText = () => {
   let length = Math.floor(Math.random() * 200) + 20
@@ -37,13 +37,14 @@ const randomText = () => {
 export default defineComponent({
   components: {
     ListView,
+    vTemplate: ListItemTemplate,
   },
   data() {
     return {
       items2: [
         ...Array(200)
           .fill('')
-          .map((item, index) => `Item ${index}\n${randomText()}`),
+          .map((item, index) => ({ number: index, text: randomText() })),
       ],
       items: [
         'Item 1',
@@ -71,8 +72,10 @@ export default defineComponent({
   methods: {
     onItemTap(event) {
       console.log(`Tapped ${event.item}`)
+      alert(event.item.text)
     },
     onTestTap(item, index, even, odd) {
+      alert(`Test tap ${index}! (${item}, ${index}, ${even}, ${odd})`)
       console.log(`Test tap ${index}! (${item}, ${index}, ${even}, ${odd})`)
     },
   },
