@@ -11,6 +11,7 @@ import {
 } from '@vue/compiler-core'
 import { parserOptions } from './parserOptions'
 import { transformStyle } from './transforms/transformStyle'
+import { transformVTemplate } from './transforms/vTemplate'
 // import { transformVHtml } from './transforms/vHtml'
 import { transformVText } from './transforms/vText'
 import { transformModel } from './transforms/vModel'
@@ -23,6 +24,7 @@ export { parserOptions }
 
 export const DOMNodeTransforms: NodeTransform[] = [
   transformStyle,
+  transformVTemplate,
   // ...(__DEV__ ? [warnTransitionChildren] : [])
 ]
 

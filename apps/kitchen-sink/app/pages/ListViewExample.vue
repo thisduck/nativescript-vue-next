@@ -1,7 +1,7 @@
 <template>
   <Page>
     <ListView :items="items2" @itemTap="onItemTap">
-      <v-template v-slot="{ item, index, $even, $odd }">
+      <v-template>
         <GridLayout columns="*, auto ">
           <Label textWrap="true"> {{ item.number }} - {{ item.text }} </Label>
           <Button
@@ -11,7 +11,7 @@
           />
         </GridLayout>
       </v-template>
-      <v-template name="other" v-slot="{ item, index }" if="$odd">
+      <v-template name="other" if="$odd">
         <Label>Odd - {{ index }} - {{ item.number }}</Label>
       </v-template>
     </ListView>
