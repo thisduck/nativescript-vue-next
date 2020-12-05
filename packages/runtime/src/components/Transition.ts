@@ -1,6 +1,6 @@
 // taken from vue's runtime-dom
 
-import { EventData, ViewBase } from '@nativescript/core'
+import { ViewBase } from '@nativescript/core'
 import {
   BaseTransition,
   BaseTransitionProps,
@@ -270,7 +270,7 @@ let endId = 0
 
 function whenTransitionEnds(
   el: NSVElement & { _endId?: number },
-  expectedType: TransitionProps['type'] | undefined,
+  _expectedType: TransitionProps['type'] | undefined,
   explicitTimeout: number | null,
   resolve: () => void
 ) {
@@ -293,14 +293,15 @@ function whenTransitionEnds(
 }
 
 // from: https://gist.github.com/jakebellacera/9261266
-function css_time_to_milliseconds(time_string) {
+function css_time_to_milliseconds(time_string: string) {
   try {
-    var num = parseFloat(time_string, 10),
-      unit = time_string.match(/m?s/),
-      milliseconds
+    let num = parseFloat(time_string),
+      matches = time_string.match(/m?s/),
+      milliseconds,
+      unit
 
-    if (unit) {
-      unit = unit[0]
+    if (matches) {
+      unit = matches[0]
     }
 
     switch (unit) {
