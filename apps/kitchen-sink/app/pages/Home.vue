@@ -4,24 +4,13 @@
       <Label text="Home" />
     </ActionBar>
 
-    <StackLayout>
-      <Button class="-outline" text="Counter" @tap="$navigateTo(Counter)" />
-      <Button
-        class="-outline"
-        text="Composition Counter"
-        @tap="$navigateTo(CompositionCounter)"
-      />
-      <Button
-        class="-outline"
-        text="BottomNavigation"
-        @tap="$navigateTo(BottomNavigation)"
-      />
-      <Button
-        class="-outline"
-        text="List View Example"
-        @tap="$navigateTo(ListViewExample)"
-      />
-    </StackLayout>
+    <ScrollView>
+      <ListView for="item in components" @itemTap="gotoComponent">
+        <v-template>
+          <Label :text="item.name" />
+        </v-template>
+      </ListView>
+    </ScrollView>
   </Page>
 </template>
 
@@ -34,11 +23,18 @@ import ListViewExample from './ListViewExample'
 export default {
   data() {
     return {
-      Counter,
-      CompositionCounter,
-      BottomNavigation,
-      ListViewExample
+      components: [
+        { component: Counter, name: 'Counter' },
+        { component: CompositionCounter, name: 'Composition Counter' },
+        { component: BottomNavigation, name: 'Bottom Navigation' },
+        { component: ListViewExample, name: 'List View Example' },
+      ],
     }
+  },
+  methods: {
+    gotoComponent({ item }) {
+      this.$navigateTo(item.component)
+    },
   },
 }
 </script>
