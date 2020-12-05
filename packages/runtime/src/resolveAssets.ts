@@ -2,7 +2,14 @@ import {
   Component,
   resolveComponent as _resolveComponent,
 } from '@vue/runtime-core'
-import { ActionBar, BottomNavigation, isKnownView, Tabs } from '.'
+import {
+  ActionBar,
+  BottomNavigation,
+  isKnownView,
+  Tabs,
+  ListView,
+  ListItemTemplate,
+} from '.'
 
 export function resolveComponent(name: string): Component | string | undefined {
   // in the standalone compiler, everything is treated as a component because we don't
@@ -23,6 +30,12 @@ export function resolveComponent(name: string): Component | string | undefined {
   }
   if (name === 'BottomNavigation') {
     return BottomNavigation
+  }
+  if (name === 'ListView') {
+    return ListView
+  }
+  if (name === 'v-template') {
+    return ListItemTemplate
   }
 
   return _resolveComponent(name)

@@ -20,7 +20,6 @@
 
 <script>
 import { defineComponent } from 'nativescript-vue'
-import { ListView, ListItemTemplate } from 'nativescript-vue'
 
 const randomText = () => {
   let length = Math.floor(Math.random() * 200) + 20
@@ -35,10 +34,6 @@ const randomText = () => {
 }
 
 export default defineComponent({
-  components: {
-    ListView,
-    vTemplate: ListItemTemplate,
-  },
   data() {
     return {
       items2: [
