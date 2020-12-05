@@ -19,6 +19,7 @@ import Counter from './Counter'
 import CompositionCounter from './CompositionCounter'
 import BottomNavigation from './BottomNavigation'
 import ListViewExample from './ListViewExample'
+import TransitionExample from './TransitionExample'
 
 export default {
   data() {
@@ -28,6 +29,7 @@ export default {
         { component: CompositionCounter, name: 'Composition Counter' },
         { component: BottomNavigation, name: 'Bottom Navigation' },
         { component: ListViewExample, name: 'List View Example' },
+        { component: TransitionExample, name: 'Transition Example' },
       ],
     }
   },

@@ -9,6 +9,7 @@ import {
   Tabs,
   ListView,
   ListItemTemplate,
+  Transition,
 } from '.'
 
 export function resolveComponent(name: string): Component | string | undefined {
@@ -36,6 +37,9 @@ export function resolveComponent(name: string): Component | string | undefined {
   }
   if (name === 'v-template') {
     return ListItemTemplate
+  }
+  if (name === 'Transition') {
+    return Transition
   }
 
   return _resolveComponent(name)

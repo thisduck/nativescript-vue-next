@@ -101,5 +101,6 @@ export { ActionBar } from './components/ActionBar'
 export { ListView, ListItemTemplate } from './components/ListView'
 export { Tabs } from './components/Tabs'
 export { BottomNavigation } from './components/BottomNavigation'
+export { Transition } from './components/Transition'
 
 export * from '@vue/runtime-core'
