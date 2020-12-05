@@ -1,18 +1,18 @@
 <template>
   <Page>
-    <ListView :items="items2" @itemTap="onItemTap">
+    <ListView for="(thing, i) in items2" @itemTap="onItemTap">
       <v-template>
         <GridLayout columns="*, auto ">
-          <Label textWrap="true"> {{ item.number }} - {{ item.text }} </Label>
+          <Label textWrap="true"> {{ thing.number }} - {{ thing.text }} </Label>
           <Button
             col="1"
-            :text="'tap ' + index"
-            @tap="onTestTap(item.text, index, $even, $odd)"
+            :text="'tap ' + i"
+            @tap="onTestTap(thing.text, i, $even, $odd)"
           />
         </GridLayout>
       </v-template>
       <v-template name="other" if="$odd">
-        <Label>Odd - {{ index }} - {{ item.number }}</Label>
+        <Label>Odd - {{ i }} - {{ thing.number }}</Label>
       </v-template>
     </ListView>
   </Page>

@@ -182,6 +182,14 @@ export const ListView = defineComponent({
       type: Array,
       required: true,
     },
+    '+index': {
+      type: String,
+      default: '$index',
+    },
+    '+alias': {
+      type: String,
+      default: 'item',
+    },
   },
   emits: ['itemTap'],
   setup(props, ctx) {
@@ -190,8 +198,8 @@ export const ListView = defineComponent({
     provide(TemplatesBagSymbol, templates)
 
     const getItemContext = (item: any, index: number) => ({
-      item,
-      index,
+      [props['+alias']]: item,
+      [props['+index']]: index,
       $even: index % 2 === 0,
       $odd: index % 2 !== 0,
     })
